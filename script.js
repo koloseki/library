@@ -19,6 +19,23 @@ function addBookToLibrary(book) {
     myLibrary.push(book);
 }
 
+function createBook(){
+    let newBook = new Book(document.querySelector('#title').value,
+        document.querySelector('#author').value,
+        document.querySelector('#pages').value,
+        document.querySelector('#read').value);
+
+    myLibrary.push(newBook);
+    console.table(myLibrary);
+    document.querySelector('#books').innerHTML = "";
+    displayBooks(myLibrary);
+
+    document.querySelector('#title').value = '';
+    document.querySelector('#author').value = '';
+    document.querySelector('#pages').value = '';
+
+}
+
 
 const theHobbit = new Book('The Hobbit', 'J.R.R. Tolkien', 295, 'not read yet');
 const Eragon = new Book('Eragon', 'Christopher Paolini', 509, 'not read yet');
@@ -43,8 +60,9 @@ function displayBooks(myLibrary){
 }
 
 function toogleForm(){
-    document.querySelector('#form').classList.toggle('hidden');
+    document.querySelector('#form_div').classList.toggle('hidden');
 }
 
 
-displayBooks(myLibrary);
+
+

@@ -12,17 +12,22 @@
 </head>
 <body>
 
-<form id="form" class="hidden" method="get">
-    <input type="text" id="title" placeholder="Title">
-    <input type="text" id="author" placeholder="Author">
-    <input type="text" id="pages" placeholder="Pages">
-    <input type="checkbox" id="read" placeholder="Read">
-    <button id="submit">Submit</button>
-</form>
 
-<header>
-    1
-</header>
+<div id="form_div" class="hidden">
+
+    <form id="form" method="post">
+        <input type="text" id="title" placeholder="Title">
+        <input type="text" id="author" placeholder="Author">
+        <input type="text" id="pages" placeholder="Pages">
+        <input type="checkbox" id="read" placeholder="Read">
+
+    </form>
+    <button onclick="createBook(), toogleForm()">Submit</button>
+
+
+</div>
+
+
 
 
 
