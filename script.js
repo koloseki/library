@@ -23,16 +23,19 @@ function createBook(){
     let newBook = new Book(document.querySelector('#title').value,
         document.querySelector('#author').value,
         document.querySelector('#pages').value,
-        document.querySelector('#read').value);
+        document.querySelector('#read').checked ? 'Readed' : 'not read yet');
 
     myLibrary.push(newBook);
     console.table(myLibrary);
     document.querySelector('#books').innerHTML = "";
     displayBooks(myLibrary);
 
+
+    //clear form
     document.querySelector('#title').value = '';
     document.querySelector('#author').value = '';
     document.querySelector('#pages').value = '';
+    document.querySelector('#read').checked = false;
 
 }
 
@@ -54,9 +57,24 @@ function displayBooks(myLibrary){
         bookDiv.innerHTML = `<h3>${book.title}</h3>
         <p>Author: ${book.author}</p>
         <p>Pages: ${book.pages}</p>
-        <p>Read Status: ${book.read}</p>`;
+        <p>Read Status: ${book.read}<button onclick="changeStatus(${i})">Change</button></p>
+        <button class="delete" onclick="deleteBook(${i})">Delete</button>`;
+        
         document.querySelector('#books').appendChild(bookDiv);
+
     }
+}
+
+function deleteBook(i){
+    myLibrary.splice(i, 1);
+    document.querySelector('#books').innerHTML = "";
+    displayBooks(myLibrary);
+}
+
+function changeStatus(i){
+    myLibrary[i].read = myLibrary[i].read === 'Readed' ? 'not read yet' : 'Readed';
+    document.querySelector('#books').innerHTML = "";
+    displayBooks(myLibrary);
 }
 
 function toogleForm(){
@@ -65,4 +83,4 @@ function toogleForm(){
 
 
 
-
+displayBooks(myLibrary);
