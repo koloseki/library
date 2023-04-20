@@ -37,16 +37,11 @@ function createBook(){
     document.querySelector('#pages').value = '';
     document.querySelector('#read').checked = false;
 
+
 }
 
 
-const theHobbit = new Book('The Hobbit', 'J.R.R. Tolkien', 295, 'not read yet');
-const Eragon = new Book('Eragon', 'Christopher Paolini', 509, 'not read yet');
-const RoadsidePicnic = new Book('Roadside Picnic', 'Boris Natanovič Strugackij, Arkadij Natanovič Strugackij', 224 , 'Readed');
 
-addBookToLibrary(theHobbit);
-addBookToLibrary(Eragon);
-addBookToLibrary(RoadsidePicnic);
 
 
 function displayBooks(myLibrary){
@@ -79,6 +74,12 @@ function changeStatus(i){
 
 function toogleForm(){
     document.querySelector('#form_div').classList.toggle('hidden');
+
+    if(document.querySelector('#form_div').classList.contains('hidden')){
+        document.querySelector('#addBook').innerHTML = 'Add Book';
+    }else {
+        document.querySelector('#addBook').innerHTML = 'Close';
+    }
 }
 
 
