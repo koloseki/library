@@ -1,27 +1,148 @@
-body{
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+
+
+:root{
+    z-index: 1;
+}
+
+
+body {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    background-color: #2f2f2f;
+    color: ghostwhite;
+    font-family: 'Roboto' , sans-serif;
+    margin: 0;
+
+}
+
+
+header{
+    background-color: #1f1f1f;
+    padding: 1rem;
+    text-align: center;
+
+}
+
+main{
     display: flex;
     flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    gap: 2rem;
 }
 
-body >*{
-    border: 1px solid red;
+
+#addBook{
+    background-color: #3f3f3f;
+    color: ghostwhite;
+    padding: 1rem;
+    font-size: 1rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: 0.5s;
+    border: 1px solid ghostwhite;
+
 }
 
+
+#addBook:hover{
+    background-color: #5f5f5f;
+    transition: 0.5s;
+}
+
+
+#books{
+
+    display: grid;
+    padding: 1rem 20vw 1rem 20vw;
+    gap: 3rem;
+    grid-template-columns: repeat(3,minmax(200px,1fr));
+}
 
 #books > * {
+    background-color: #3f3f3f;
     padding: 1rem;
-    border: 1px solid blue;
+    border-radius: 1rem;
+    box-shadow: ghostwhite 3px 4px 10px;
+}
+
+.delete{
+    background-color: darkred;
+    color: white;
+    border: none;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: 0.5s;
+
+}
+
+.delete:hover{
+    background-color: red;
+    transition: 0.5s;
+}
+
+.change_button{
+    background-color: #3f3f3f;
+    color: ghostwhite;
+    border: none;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.change_button:hover{
+    background-color: lightyellow;
+    color: #1f1f1f;
+    transition: 0.5s;
 }
 
 
 #form_div{
-    background-color: orange;
-    border: 3px solid black;
-    padding: 10px;
+    margin-left: calc(50vw - 12.5vw);
+    flex-direction: column;
+    top: 40vh;
+    left: calc(50vw - 12.5vw);
+    width: 25vw;
+    background-color: ghostwhite;
+    color: #1f1f1f;
+    padding: 1rem;
+    border-radius: 1rem;
+    margin-top: 5vh;
+}
+
+#form_div > #submit_button{
+    background-color: darkseagreen;
+    color: whitesmoke;
+    padding: 1rem;
+    font-size: 1rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: 0.5s;
+    border: 1px solid ghostwhite;
 }
 
 
+
+#form_div > #submit_button:hover{
+    background-color: seagreen;
+    transition: 0.5s;
+}
+
+
+#form_div > form {
+    display: flex;
+    flex-direction: column;
+    padding: 0 5vw 0 5vw;
+    gap:0.5rem;
+    justify-content: center;
+
+}
+
 .hidden{
     display: none;
-
 }

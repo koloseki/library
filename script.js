@@ -57,8 +57,8 @@ function displayBooks(myLibrary){
         bookDiv.innerHTML = `<h3>${book.title}</h3>
         <p>Author: ${book.author}</p>
         <p>Pages: ${book.pages}</p>
-        <p>Read Status: ${book.read}<button onclick="changeStatus(${i})">Change</button></p>
-        <button class="delete" onclick="deleteBook(${i})">Delete</button>`;
+        <p>Read Status:  &nbsp<button class="change_button" onclick="changeStatus(${i})"> ${book.read}</button></p>
+        <button class="delete" onclick="deleteBook(${i})">Remove</button>`;
         
         document.querySelector('#books').appendChild(bookDiv);
 
