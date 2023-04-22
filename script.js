@@ -72,7 +72,7 @@ function changeStatus(i){
     displayBooks(myLibrary);
 }
 
-function toogleForm(){
+function toggleForm(){
     document.querySelector('#form_div').classList.toggle('hidden');
 
     if(document.querySelector('#form_div').classList.contains('hidden')){

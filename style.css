@@ -146,3 +146,15 @@ main{
 .hidden{
     display: none;
 }
+
+@media screen and (max-width: 768px){
+    #books{
+        grid-template-columns: repeat(2,minmax(200px,1fr));
+    }
+}
+
+@media screen and (max-width: 480px){
+    #books{
+        grid-template-columns: repeat(1,minmax(200px,1fr));
+    }
+}
